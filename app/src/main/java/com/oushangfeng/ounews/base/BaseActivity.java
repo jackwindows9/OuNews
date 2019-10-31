@@ -131,6 +131,8 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
         super.onCreate(savedInstanceState);
 
         if (getClass().isAnnotationPresent(ActivityFragmentInject.class)) {
+            // 通过反射的isAnnotationPresent方法判断它是否应用了某个注解
+            // 再获取到注解本身，调用注解的方法，对Activity的成员变量进行赋值，完成注解的作用（便利的赋值）
             ActivityFragmentInject annotation = getClass().getAnnotation(ActivityFragmentInject.class);
             mContentViewId = annotation.contentViewId();
             mEnableSlidr = annotation.enableSlidr();

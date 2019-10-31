@@ -15,6 +15,7 @@ import java.lang.annotation.Target;
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.TYPE})
+// ElementType.TYPE 可以对一个类进行注解
 public @interface ActivityFragmentInject {
 
     /**
